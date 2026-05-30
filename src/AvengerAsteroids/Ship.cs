@@ -16,6 +16,12 @@ namespace Asteroids
         public Bullets shots;
         public int shields = 100;
 
+        // Brief invulnerability after a hit (and at the start of a life). Without
+        // it, an asteroid reaching the ship splits into 4 at the ship's position,
+        // those split into 16 the next frame, etc. — a cascade of collisions that
+        // drains all shields in a few frames. Frames are counted at 30 fps.
+        public int invulnerable = 60;
+
         public Ship(Game caller) : base(caller)
         {
             dimensions = new[] { new[] { -6f, 6f }, new[] { 6f, 6f }, new[] { 6f, -6f }, new[] { -6f, -6f } };
@@ -78,7 +84,9 @@ namespace Asteroids
         {
             // A collision with our own bullet does nothing.
             if (collidedWith is Bullet shot && !shot.baddieBullet) return;
+            if (invulnerable > 0) return; // protected just after the last hit
             shields -= 5;
+            invulnerable = 45;
             drawShields();
         }
 
@@ -140,7 +148,16 @@ namespace Asteroids
 
         public override void draw()
         {
+            if (invulnerable > 0) invulnerable--;
+
+            // Blink the ship while invulnerable (hide the texture on alternate
+            // groups of frames) so the player can see they're protected.
+            bool blinkHide = invulnerable > 0 && (invulnerable / 4) % 2 == 0;
+            int savedTexture = textureNumber;
+            if (blinkHide) textureNumber = -1;
             base.draw();
+            textureNumber = savedTexture;
+
             if (showThrust) drawThrust();
         }
     }
