@@ -21,6 +21,10 @@ cd src/AvengerAsteroids
 dotnet run
 ```
 
+> **Play it in a browser:** the game was originally a web applet, so there's also
+> a no-dependency **HTML5 Canvas** port in [`web/`](web/) — serve that folder
+> statically (e.g. GitHub Pages) and play it online. See [web/README.md](web/README.md).
+
 ### Controls
 
 | Input | Action |

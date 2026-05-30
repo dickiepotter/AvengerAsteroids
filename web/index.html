@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avenger Asteroids</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #05060a;
+      color: #cdd3e0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+    h1 { margin: 8px 0 0; font-weight: 600; letter-spacing: 0.04em; }
+    #game {
+      background: #000;
+      border: 1px solid #222a3a;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      max-width: 92vmin;
+      max-height: 92vmin;
+      touch-action: none;
+    }
+    .controls {
+      font-size: 13px;
+      color: #8b93a7;
+      text-align: center;
+      max-width: 680px;
+      line-height: 1.6;
+    }
+    kbd {
+      background: #161c2b;
+      border: 1px solid #2a3346;
+      border-bottom-width: 2px;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-family: ui-monospace, monospace;
+      color: #cdd3e0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Avenger Asteroids</h1>
+  <canvas id="game" width="700" height="700"></canvas>
+  <div class="controls">
+    <kbd>↑</kbd> thrust &nbsp; <kbd>←</kbd> <kbd>→</kbd> turn &nbsp;
+    <kbd>Space</kbd> fire &nbsp; <kbd>C</kbd> teleport &nbsp;
+    <kbd>B</kbd> brake &nbsp; <kbd>F1</kbd> debug
+    <br />
+    A web port of the 2003 University of Hull coursework game by Richard Potter —
+    space imagery courtesy of NASA.
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

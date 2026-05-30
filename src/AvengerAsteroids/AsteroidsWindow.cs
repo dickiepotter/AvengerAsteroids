@@ -34,9 +34,10 @@ namespace Asteroids
             this.capturePath = capturePath;
             this.captureAfterFrames = captureAfterFrames;
             // The per-frame movement speeds were tuned for the original's lower
-            // redraw rate; 30 fps keeps the action playable (60 is too fast given
-            // asteroids move ~2 world units per frame in a 200-wide world).
-            UpdateFrequency = capturePath != null ? 0 : 30;
+            // redraw rate; 25 fps keeps the action at a comfortable pace (60 is far
+            // too fast given asteroids move ~2 world units per frame in a 200-wide
+            // world).
+            UpdateFrequency = capturePath != null ? 0 : 25;
         }
 
         protected override void OnLoad()
