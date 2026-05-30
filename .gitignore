@@ -1,0 +1,15 @@
+# Build output
+bin/
+obj/
+
+# Headless render captures (regenerated with --capture)
+captures/
+
+# IDE
+.vs/
+*.user
+*.suo
+
+# OS
+Thumbs.db
+.DS_Store
