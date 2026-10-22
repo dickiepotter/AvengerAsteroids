@@ -91,3 +91,9 @@ intact; only the dead plumbing is replaced.
 
 By **Richard Potter** (University of Hull, 2003). Space imagery, per the in-game
 credit, largely courtesy of NASA.
+
+## Licence and disclaimer
+
+This is a personal project by Richard Potter, shared in the hope it's useful. It's free to use under the MIT licence (see [LICENSE](LICENSE)). It's provided as is: I make no promises that it works or suits your purpose, and I take no responsibility for anything that happens from using it. It isn't a product of, or supported by, any company I work for.
+
+Third-party material keeps its own terms: the space imagery is largely courtesy of NASA (as credited in the game), and the 8×8 bitmap font in `Core/Font8x8` is public domain.
